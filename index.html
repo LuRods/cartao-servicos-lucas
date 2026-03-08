@@ -3,21 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lucas R. de Araujo — Cartão & Serviços</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Lucas R. de Araujo — Automação Digital & IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   
   :root {
-    --bg: #0a0a0f;
-    --card-bg: #12121a;
+    --bg: #08080d;
+    --card-bg: #0f0f18;
+    --card-bg2: #13131f;
     --cyan: #00ced1;
     --magenta: #e040fb;
     --green: #00e676;
     --gold: #ffd740;
-    --white: #f0f0f5;
+    --white: #eeeef5;
     --gray: #8888aa;
-    --border: #1e1e2e;
+    --light-gray: #b0b0c8;
+    --border: #1c1c30;
+    --border-light: #2a2a44;
   }
 
   body {
@@ -29,81 +32,75 @@
   }
 
   .container {
-    max-width: 800px;
+    max-width: 820px;
     margin: 0 auto;
   }
 
-  /* ===== BUSINESS CARD ===== */
-  .section-title {
+  .section-label {
     font-family: 'Space Mono', monospace;
     color: var(--cyan);
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 20px;
-    opacity: 0.7;
+    opacity: 0.6;
   }
 
-  .card-container {
-    perspective: 1000px;
-    margin-bottom: 60px;
+  /* ===== BUSINESS CARD ===== */
+  .card-wrapper {
+    margin-bottom: 50px;
   }
 
   .business-card {
     width: 100%;
-    max-width: 500px;
+    max-width: 520px;
     aspect-ratio: 1.75 / 1;
-    background: linear-gradient(135deg, #12121a 0%, #1a1a2e 50%, #12121a 100%);
+    background: linear-gradient(145deg, #0f0f1a 0%, #181830 40%, #0f0f1a 100%);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 32px;
+    border-radius: 14px;
+    padding: 34px;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,206,209,0.05);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.6), 0 0 50px rgba(0,206,209,0.04);
   }
 
   .business-card::before {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -30%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(0,206,209,0.08) 0%, transparent 70%);
-    pointer-events: none;
+    top: -60%;
+    right: -25%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(0,206,209,0.07) 0%, transparent 65%);
   }
 
   .business-card::after {
     content: '';
     position: absolute;
-    bottom: -40%;
-    left: -20%;
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, rgba(224,64,251,0.06) 0%, transparent 70%);
-    pointer-events: none;
+    bottom: -45%;
+    left: -15%;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(224,64,251,0.05) 0%, transparent 65%);
   }
 
-  .card-top {
-    position: relative;
-    z-index: 1;
-  }
+  .card-top { position: relative; z-index: 1; }
 
   .card-name {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 6px;
   }
 
   .card-title {
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     color: var(--cyan);
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
   }
 
@@ -116,7 +113,7 @@
   }
 
   .card-info {
-    font-size: 12px;
+    font-size: 11.5px;
     color: var(--gray);
     font-family: 'Space Mono', monospace;
     display: flex;
@@ -124,264 +121,400 @@
     gap: 8px;
   }
 
-  .card-info .icon {
+  .card-info .ic {
     color: var(--cyan);
-    font-size: 11px;
+    font-size: 10px;
     width: 14px;
     text-align: center;
+    flex-shrink: 0;
   }
 
   .card-tagline {
-    font-size: 10px;
+    font-size: 9.5px;
     color: var(--magenta);
     font-family: 'Space Mono', monospace;
-    letter-spacing: 1px;
-    margin-top: 8px;
-    opacity: 0.8;
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+    opacity: 0.75;
   }
 
-  /* ===== SERVICE ONE-PAGER ===== */
-  .one-pager {
+  /* ===== MAIN PAGE ===== */
+  .page {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 40px;
+    border-radius: 18px;
+    overflow: hidden;
     margin-bottom: 40px;
   }
 
-  .op-header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 30px;
+  /* HERO */
+  .hero {
+    padding: 44px 40px 36px;
     border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
   }
 
-  .op-header h1 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 8px;
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(0,206,209,0.04) 0%, transparent 50%, rgba(224,64,251,0.03) 100%);
   }
 
-  .op-header h1 span {
-    color: var(--cyan);
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero h1 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
   }
 
-  .op-header p {
-    color: var(--gray);
-    font-size: 14px;
-    max-width: 500px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
+  .hero h1 span { color: var(--cyan); }
 
-  .op-section {
-    margin-bottom: 36px;
-  }
-
-  .op-section-title {
+  .hero .subtitle {
     font-family: 'Space Mono', monospace;
-    font-size: 13px;
+    font-size: 12px;
     color: var(--cyan);
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
   }
 
-  .op-section-title::after {
+  .hero .desc {
+    font-size: 15px;
+    color: var(--light-gray);
+    line-height: 1.7;
+    max-width: 620px;
+  }
+
+  /* CREDIBILITY BAR */
+  .cred-bar {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .cred-item {
+    flex: 1;
+    min-width: 150px;
+    padding: 18px 20px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .cred-item:last-child { border-right: none; }
+
+  .cred-item .val {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 3px;
+  }
+
+  .cred-item .lbl {
+    font-size: 11px;
+    color: var(--gray);
+    letter-spacing: 0.5px;
+  }
+
+  /* ABOUT */
+  .about {
+    padding: 36px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--cyan);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .stitle::after {
     content: '';
     flex: 1;
     height: 1px;
     background: var(--border);
   }
 
-  .service-grid {
+  .about-text {
+    font-size: 14px;
+    color: var(--light-gray);
+    line-height: 1.8;
+  }
+
+  .about-text strong { color: var(--white); }
+
+  .about-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--cyan);
+    background: rgba(0,206,209,0.08);
+    border: 1px solid rgba(0,206,209,0.15);
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 36px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .srv-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 14px;
   }
 
-  @media (max-width: 600px) {
-    .service-grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 620px) { .srv-grid { grid-template-columns: 1fr; } }
 
-  .service-card {
-    background: rgba(255,255,255,0.02);
+  .srv {
+    background: var(--card-bg2);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 11px;
+    padding: 22px;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
 
-  .service-card:hover {
-    border-color: var(--cyan);
+  .srv:hover {
+    border-color: rgba(0,206,209,0.3);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0,206,209,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
 
-  .service-card .emoji {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
+  .srv .icon { font-size: 22px; margin-bottom: 10px; }
 
-  .service-card h3 {
-    font-size: 15px;
+  .srv h3 {
+    font-size: 14.5px;
     font-weight: 600;
     margin-bottom: 6px;
   }
 
-  .service-card p {
-    font-size: 12px;
+  .srv p {
+    font-size: 12.5px;
     color: var(--gray);
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
-  .highlight-box {
-    background: linear-gradient(135deg, rgba(0,206,209,0.08), rgba(224,64,251,0.05));
-    border: 1px solid rgba(0,206,209,0.2);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
+  .srv .for-who {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--magenta);
     margin-top: 10px;
+    opacity: 0.8;
   }
 
-  .highlight-box .big {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--green);
-    margin-bottom: 4px;
+  /* VERTICALS */
+  .verticals {
+    padding: 36px 40px;
+    border-bottom: 1px solid var(--border);
   }
 
-  .highlight-box .sub {
+  .vert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  @media (max-width: 620px) { .vert-grid { grid-template-columns: 1fr 1fr; } }
+
+  .vert {
+    background: rgba(255,255,255,0.015);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .vert:hover { border-color: var(--border-light); }
+
+  .vert .emoji { font-size: 24px; margin-bottom: 8px; }
+
+  .vert .name {
     font-size: 12px;
-    color: var(--gray);
+    font-weight: 500;
+    color: var(--light-gray);
   }
 
-  /* Church specific section */
-  .church-section {
-    background: linear-gradient(135deg, rgba(255,215,64,0.05), rgba(0,230,118,0.03));
-    border: 1px solid rgba(255,215,64,0.15);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 30px;
+  /* PROCESS */
+  .process {
+    padding: 36px 40px;
+    border-bottom: 1px solid var(--border);
   }
 
-  .church-section h3 {
-    color: var(--gold);
-    font-size: 16px;
-    margin-bottom: 12px;
+  .steps {
     display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .church-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  .church-item .check {
-    color: var(--green);
-    font-size: 14px;
-    margin-top: 2px;
-  }
-
-  .church-item .text {
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.5;
-  }
-
-  .church-item .text strong {
-    color: var(--white);
-  }
-
-  /* Process */
-  .process-steps {
-    display: flex;
-    gap: 16px;
+    gap: 14px;
     flex-wrap: wrap;
   }
 
   .step {
     flex: 1;
-    min-width: 140px;
+    min-width: 130px;
     text-align: center;
-    padding: 16px;
-    background: rgba(255,255,255,0.02);
-    border-radius: 10px;
+    padding: 20px 14px;
+    background: var(--card-bg2);
+    border-radius: 11px;
     border: 1px solid var(--border);
+    position: relative;
   }
 
   .step .num {
     font-family: 'Space Mono', monospace;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     color: var(--cyan);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    line-height: 1;
   }
 
-  .step .label {
+  .step .txt {
     font-size: 12px;
     color: var(--gray);
     line-height: 1.4;
   }
 
-  /* CTA */
-  .cta-box {
-    text-align: center;
-    padding: 30px;
-    background: linear-gradient(135deg, rgba(0,206,209,0.1), rgba(224,64,251,0.08));
-    border-radius: 12px;
-    border: 1px solid rgba(0,206,209,0.2);
+  .step .free-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--green);
+    background: rgba(0,230,118,0.1);
+    border: 1px solid rgba(0,230,118,0.2);
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 6px;
+    display: inline-block;
   }
 
-  .cta-box h3 {
-    font-size: 18px;
+  /* TESTIMONIAL TEASE */
+  .testimonials {
+    padding: 36px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .test-box {
+    background: linear-gradient(135deg, rgba(255,215,64,0.04), rgba(0,230,118,0.03));
+    border: 1px solid rgba(255,215,64,0.12);
+    border-radius: 11px;
+    padding: 22px;
+    text-align: center;
+  }
+
+  .test-box .quote {
+    font-size: 14px;
+    color: var(--light-gray);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .test-box .author {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+  }
+
+  .test-box .note {
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: 12px;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0,206,209,0.06), rgba(224,64,251,0.04));
+  }
+
+  .cta h3 {
+    font-size: 20px;
+    font-weight: 700;
     margin-bottom: 8px;
   }
 
-  .cta-box p {
-    color: var(--gray);
+  .cta p {
     font-size: 13px;
-    margin-bottom: 16px;
+    color: var(--gray);
+    margin-bottom: 20px;
+    line-height: 1.6;
   }
 
-  .cta-button {
-    display: inline-block;
-    background: var(--cyan);
-    color: var(--bg);
-    padding: 12px 32px;
-    border-radius: 8px;
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: 9px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
     text-decoration: none;
     transition: all 0.3s ease;
   }
 
-  .cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0,206,209,0.3);
+  .btn-primary {
+    background: var(--cyan);
+    color: var(--bg);
   }
 
-  .footer-note {
+  .btn-primary:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 24px rgba(0,206,209,0.3);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--cyan);
+    border: 1px solid rgba(0,206,209,0.3);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(0,206,209,0.08);
+  }
+
+  .footer {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 36px;
     font-size: 11px;
-    color: #444;
+    color: #333;
     font-family: 'Space Mono', monospace;
+    line-height: 1.6;
   }
 
-  /* Print styles */
   @media print {
-    body { background: white; color: black; }
-    .business-card { box-shadow: none; border: 2px solid #333; }
-    .card-name { color: black; }
-    .one-pager { border: 1px solid #ccc; }
+    body { background: #fff; color: #111; padding: 20px; }
+    .page { border: 1px solid #ddd; box-shadow: none; }
+    .business-card { border: 2px solid #333; box-shadow: none; }
+    .card-name, .hero h1 { color: #111; }
+    .srv, .step, .vert { border: 1px solid #ccc; }
   }
 </style>
 </head>
@@ -389,152 +522,209 @@
 
 <div class="container">
 
-  <!-- SECTION: BUSINESS CARD -->
-  <div class="section-title">// CARTÃO DE VISITA</div>
-  
-  <div class="card-container">
+  <!-- BUSINESS CARD -->
+  <div class="section-label">// cartão de visita</div>
+  <div class="card-wrapper">
     <div class="business-card">
       <div class="card-top">
         <div class="card-name">Lucas R. de Araujo</div>
         <div class="card-title">Especialista em Automação Digital</div>
       </div>
       <div class="card-bottom">
-        <div class="card-info"><span class="icon">✉</span> lucas.araujo1217@gmail.com</div>
-        <div class="card-info"><span class="icon">☎</span> (21) 97422-6044</div>
-        <div class="card-info"><span class="icon">in</span> linkedin.com/in/lucaraujo</div>
-        <div class="card-info"><span class="icon">⚡</span> Rio de Janeiro, RJ</div>
-        <div class="card-tagline">IA · Automação · Chatbots · Integração de Sistemas</div>
+        <div class="card-info"><span class="ic">✉</span> lucas.araujo1217@gmail.com</div>
+        <div class="card-info"><span class="ic">☎</span> (21) 97422-6044</div>
+        <div class="card-info"><span class="ic">in</span> linkedin.com/in/lucaraujo</div>
+        <div class="card-info"><span class="ic">◉</span> Rio de Janeiro, RJ</div>
+        <div class="card-tagline">Automação · Inteligência Artificial · Chatbots · Integração de Sistemas</div>
       </div>
     </div>
   </div>
 
-  <!-- SECTION: ONE-PAGER DE SERVIÇOS -->
-  <div class="section-title">// APRESENTAÇÃO DE SERVIÇOS</div>
+  <!-- MAIN PAGE -->
+  <div class="section-label">// apresentação profissional</div>
 
-  <div class="one-pager">
-    
-    <div class="op-header">
-      <h1>Lucas R. <span>de Araujo</span></h1>
-      <p>Especialista em automação digital e inteligência artificial. Ajudo organizações a economizar tempo, reduzir custos e profissionalizar sua presença digital.</p>
-    </div>
+  <div class="page">
 
-    <!-- CHURCH SPECIFIC -->
-    <div class="church-section">
-      <h3>⛪ Soluções para Igrejas e Organizações</h3>
-      
-      <div class="church-item">
-        <span class="check">✓</span>
-        <div class="text"><strong>WhatsApp Profissional</strong> — Atendimento automático 24h com respostas inteligentes, horários de cultos, localização e informações da igreja. Mensagens de boas-vindas pra novos visitantes.</div>
-      </div>
-      
-      <div class="church-item">
-        <span class="check">✓</span>
-        <div class="text"><strong>Comunicação com Membros</strong> — Avisos de eventos, campanhas e cultos especiais enviados automaticamente. Sem depender de ligação por ligação.</div>
-      </div>
-      
-      <div class="church-item">
-        <span class="check">✓</span>
-        <div class="text"><strong>Presença Digital</strong> — Site profissional, redes sociais organizadas, perfil no Google Maps otimizado (pra novos visitantes encontrarem a igreja).</div>
-      </div>
-
-      <div class="church-item">
-        <span class="check">✓</span>
-        <div class="text"><strong>Assistente Virtual</strong> — Chatbot que responde dúvidas de visitantes e membros: horários, endereço, pedidos de oração, inscrição em eventos. Funciona 24 horas.</div>
-      </div>
-
-      <div class="church-item">
-        <span class="check">✓</span>
-        <div class="text"><strong>Gestão de Eventos</strong> — Formulários de inscrição, confirmação automática, lembretes antes do evento. Tudo organizado e profissional.</div>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Lucas R. <span>de Araujo</span></h1>
+        <div class="subtitle">Solutions Architect · Especialista em Automação Digital</div>
+        <p class="desc">Ajudo empresas e organizações a economizar tempo, reduzir custos e vender mais usando automação inteligente e IA. Trabalho remotamente para uma empresa internacional de inteligência artificial, onde projeto e implemento soluções de IA conversacional para clientes ao redor do mundo.</p>
       </div>
     </div>
 
-    <!-- ALL SERVICES -->
-    <div class="op-section">
-      <div class="op-section-title">Todos os Serviços</div>
-      
-      <div class="service-grid">
-        <div class="service-card">
-          <div class="emoji">🤖</div>
-          <h3>Chatbots com IA</h3>
-          <p>Assistentes virtuais inteligentes que atendem clientes 24h por dia no WhatsApp, site ou redes sociais.</p>
+    <!-- CREDIBILITY -->
+    <div class="cred-bar">
+      <div class="cred-item">
+        <div class="val">3+</div>
+        <div class="lbl">Anos em Tecnologia</div>
+      </div>
+      <div class="cred-item">
+        <div class="val">PT / EN</div>
+        <div class="lbl">Bilíngue Fluente</div>
+      </div>
+      <div class="cred-item">
+        <div class="val">🌎</div>
+        <div class="lbl">Empresa Internacional de IA</div>
+      </div>
+      <div class="cred-item">
+        <div class="val">★★★★★</div>
+        <div class="lbl">Avaliações de Clientes</div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="about">
+      <div class="stitle">Sobre Mim</div>
+      <p class="about-text">
+        Atuo como <strong>Solutions Architect</strong> em uma empresa canadense especializada em inteligência artificial, onde projeto agentes de IA conversacional, otimizo fluxos de atendimento e implemento soluções de automação para empresas de diversos setores — de startups a grandes operações.
+        <br><br>
+        Minha experiência combina <strong>tecnologia + vendas + atendimento ao cliente</strong>, o que me permite entender não só a parte técnica, mas o lado do negócio: como uma automação vai impactar as vendas, a satisfação dos clientes e a produtividade da equipe.
+        <br><br>
+        Trabalho remotamente com clientes internacionais diariamente e tenho <strong>depoimentos públicos de clientes satisfeitos</strong> que posso compartilhar mediante interesse.
+      </p>
+      <div class="about-tags">
+        <span class="tag">Inteligência Artificial</span>
+        <span class="tag">Automação de Processos</span>
+        <span class="tag">Chatbots & IA Conversacional</span>
+        <span class="tag">WhatsApp Business</span>
+        <span class="tag">CRM & Vendas</span>
+        <span class="tag">Integração de Sistemas</span>
+        <span class="tag">Sites & Landing Pages</span>
+        <span class="tag">Segurança Digital</span>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="services">
+      <div class="stitle">O Que Eu Faço</div>
+      <div class="srv-grid">
+
+        <div class="srv">
+          <div class="icon">🤖</div>
+          <h3>Chatbots Inteligentes com IA</h3>
+          <p>Assistentes virtuais que atendem seus clientes 24h no WhatsApp, site ou redes sociais. Respondem dúvidas, qualificam leads e agendam compromissos automaticamente.</p>
+          <div class="for-who">→ Qualquer negócio com atendimento ao cliente</div>
         </div>
 
-        <div class="service-card">
-          <div class="emoji">⚡</div>
-          <h3>Automação de Processos</h3>
-          <p>Elimino tarefas repetitivas: emails automáticos, organização de dados, follow-ups, relatórios.</p>
+        <div class="srv">
+          <div class="icon">⚡</div>
+          <h3>Automação de Vendas & Processos</h3>
+          <p>Elimino o trabalho manual: follow-ups automáticos, sequências de email, organização de leads no CRM, relatórios. Sua equipe foca em vender, não em planilha.</p>
+          <div class="for-who">→ Equipes de vendas, negócios em crescimento</div>
         </div>
 
-        <div class="service-card">
-          <div class="emoji">📱</div>
-          <h3>WhatsApp Business Pro</h3>
-          <p>Setup completo: respostas automáticas, catálogo, etiquetas, chatbot, mensagens programadas.</p>
+        <div class="srv">
+          <div class="icon">📱</div>
+          <h3>WhatsApp Business Profissional</h3>
+          <p>Setup completo: perfil profissional, respostas automáticas, catálogo de serviços, chatbot inteligente, mensagens de boas-vindas e ausência. Atendimento de empresa grande no seu WhatsApp.</p>
+          <div class="for-who">→ Qualquer negócio que atende por WhatsApp</div>
         </div>
 
-        <div class="service-card">
-          <div class="emoji">🌐</div>
-          <h3>Sites & Landing Pages</h3>
-          <p>Sites profissionais, rápidos e otimizados pra aparecer no Google. Prontos em 3-5 dias.</p>
+        <div class="srv">
+          <div class="icon">🌐</div>
+          <h3>Sites, Landing Pages & Presença Digital</h3>
+          <p>Sites profissionais e otimizados pra aparecer no Google. Landing pages de alta conversão pra campanhas. Perfil no Google Maps otimizado pra atrair clientes locais.</p>
+          <div class="for-who">→ Negócios sem site ou com presença digital fraca</div>
         </div>
 
-        <div class="service-card">
-          <div class="emoji">📊</div>
-          <h3>Dashboards & Relatórios</h3>
-          <p>Painéis visuais que consolidam dados de várias fontes. Decisões baseadas em dados, não achismo.</p>
+        <div class="srv">
+          <div class="icon">📊</div>
+          <h3>Dashboards & Análise de Dados</h3>
+          <p>Transformo dados espalhados em painéis visuais claros. Vendas, leads, financeiro, performance — tudo num lugar só, atualizado automaticamente.</p>
+          <div class="for-who">→ Gestores que precisam de visibilidade</div>
         </div>
 
-        <div class="service-card">
-          <div class="emoji">🔒</div>
-          <h3>Segurança Digital</h3>
-          <p>Auditoria de segurança, configuração de proteções, backup automatizado, treinamento de equipe.</p>
+        <div class="srv">
+          <div class="icon">🔒</div>
+          <h3>Segurança Digital & Otimização</h3>
+          <p>Auditoria de segurança, remoção de ameaças, configuração de proteções, backup automatizado. Seu computador e celular funcionando rápido e seguro.</p>
+          <div class="for-who">→ Empresas e profissionais preocupados com segurança</div>
         </div>
+
+        <div class="srv">
+          <div class="icon">📧</div>
+          <h3>Email Marketing & Comunicação</h3>
+          <p>Sequências de email automatizadas: boas-vindas, follow-up, reativação de clientes, avisos de eventos. Configuração de domínio pra emails nunca caírem em spam.</p>
+          <div class="for-who">→ Negócios que se comunicam com base de clientes</div>
+        </div>
+
+        <div class="srv">
+          <div class="icon">🔗</div>
+          <h3>Integrações & Sistemas</h3>
+          <p>Conecto as ferramentas que você já usa: CRM, WhatsApp, email, planilhas, site. Tudo conversando entre si automaticamente, sem trabalho manual.</p>
+          <div class="for-who">→ Empresas com ferramentas desconectadas</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VERTICALS -->
+    <div class="verticals">
+      <div class="stitle">Setores que Atendo</div>
+      <div class="vert-grid">
+        <div class="vert"><div class="emoji">⛪</div><div class="name">Igrejas & ONGs</div></div>
+        <div class="vert"><div class="emoji">🏥</div><div class="name">Clínicas & Saúde</div></div>
+        <div class="vert"><div class="emoji">🍽️</div><div class="name">Restaurantes & Food</div></div>
+        <div class="vert"><div class="emoji">🏋️</div><div class="name">Academias & Fitness</div></div>
+        <div class="vert"><div class="emoji">🛒</div><div class="name">E-commerce & Varejo</div></div>
+        <div class="vert"><div class="emoji">⚖️</div><div class="name">Escritórios & Serviços</div></div>
+        <div class="vert"><div class="emoji">🎓</div><div class="name">Educação & Cursos</div></div>
+        <div class="vert"><div class="emoji">🏠</div><div class="name">Imobiliárias</div></div>
+        <div class="vert"><div class="emoji">💻</div><div class="name">Startups & SaaS</div></div>
       </div>
     </div>
 
     <!-- PROCESS -->
-    <div class="op-section">
-      <div class="op-section-title">Como Funciona</div>
-      
-      <div class="process-steps">
+    <div class="process">
+      <div class="stitle">Como Funciona</div>
+      <div class="steps">
         <div class="step">
           <div class="num">01</div>
-          <div class="label">Conversa de 15min<br><small style="color:#00ced1">(gratuita)</small></div>
+          <div class="txt">Conversa inicial<br>de diagnóstico</div>
+          <span class="free-badge">gratuito · 15min</span>
         </div>
         <div class="step">
           <div class="num">02</div>
-          <div class="label">Diagnóstico e<br>proposta</div>
+          <div class="txt">Proposta<br>personalizada</div>
         </div>
         <div class="step">
           <div class="num">03</div>
-          <div class="label">Implementação<br>rápida</div>
+          <div class="txt">Implementação<br>rápida</div>
         </div>
         <div class="step">
           <div class="num">04</div>
-          <div class="label">Suporte<br>contínuo</div>
+          <div class="txt">Suporte<br>contínuo</div>
         </div>
       </div>
     </div>
 
-    <!-- HIGHLIGHT -->
-    <div class="highlight-box">
-      <div class="big">Análise gratuita de 15 minutos</div>
-      <div class="sub">Sem compromisso. Mostro onde posso ajudar antes de qualquer investimento.</div>
+    <!-- TESTIMONIAL -->
+    <div class="testimonials">
+      <div class="stitle">O Que Clientes Dizem</div>
+      <div class="test-box">
+        <div class="quote">"Trabalho diariamente com clientes internacionais que avaliam publicamente meu atendimento e resultados. Posso compartilhar esses depoimentos e explicar os projetos que realizei para cada um."</div>
+        <div class="author">— Depoimentos verificáveis em plataforma pública de avaliação</div>
+        <div class="note">Avaliações em inglês com tradução disponível mediante interesse.</div>
+      </div>
     </div>
 
     <!-- CTA -->
-    <div style="margin-top: 30px;">
-      <div class="cta-box">
-        <h3>Pronto pra profissionalizar?</h3>
-        <p>Me chama no WhatsApp ou LinkedIn que a gente marca a conversa.</p>
-        <a href="#" class="cta-button">Chamar no WhatsApp</a>
+    <div class="cta">
+      <h3>Vamos conversar?</h3>
+      <p>Ofereço uma análise gratuita de 15 minutos onde mostro oportunidades de melhoria pro seu negócio. Sem compromisso, sem enrolação.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/5521974226044" class="btn btn-primary">📱 Chamar no WhatsApp</a>
+        <a href="https://linkedin.com/in/lucaraujo" class="btn btn-secondary">in LinkedIn</a>
       </div>
     </div>
 
   </div>
 
-  <div class="footer-note">
-    Lucas R. de Araujo · Especialista em Automação Digital · Rio de Janeiro, RJ<br>
-    Bilíngue PT/EN · Disponível para projetos locais e remotos
+  <div class="footer">
+    Lucas R. de Araujo · Solutions Architect · Automação Digital & IA<br>
+    Rio de Janeiro, RJ · Bilíngue PT/EN · Disponível para projetos locais e remotos
   </div>
 
 </div>
